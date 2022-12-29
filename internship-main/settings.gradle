@@ -1,0 +1,5 @@
+rootProject.name = 'internship'
+include 'section_debug'
+include 'board'
+include 'object_oriented'
+

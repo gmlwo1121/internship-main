@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Event</title>
+</head>
+<body>
+  <h1 style="cursor: pointer;" id="title">Event Listener</h1>
+  <script>
+    const title = document.querySelector('#title');
+    
+    const handleClickTitleChange = function(){
+      document.title = '클릭됨'
+    }
+    title.addEventListener("click", handleClickTitleChange);
+  </script>
+</body>
+</html>

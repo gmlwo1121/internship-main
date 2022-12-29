@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Event</title>
+</head>
+<body>
+	<button>Add Title</button>
+	<div id="title" >
+	</div>
+  <script>
+	  /*const clickTyping = function (target) {
+		  console.log('typing')
+		  target.innerText = target.innerText + "Clicked";
+	  }*/
+	  
+	  const createH1 = function (event){
+		 const title = document.querySelector('#title');
+		 const h1 = document.createElement('h1');
+		 h1.classList.add('item');
+		 h1.innerText = "Event Listener";
+		 
+		 /*h1.addEventListener('click',function (event){
+			 console.log('typing')
+			 event.target.innerText = event.target.innerText + "   Clicked";
+		 });*/
+		 title.append(h1);
+	  }
+	  
+	  const button = document.querySelector('button');
+	  button.addEventListener('click', createH1);
+	  document.addEventListener('click', function(event) {
+		 const target = event.target;
+		  if(target.className.indexOf("item") > -1){
+			  target.innerText = target.innerText + "   Clicked";
+		  }
+	  });
+
+	  /**
+	   *
+	   * @param type : string
+	   * @param callback : function
+	   */
+	  function addEvListener(type, callback){
+		  console.log('ev listener')
+		  callback('ev listener');
+	  }
+	  
+	  const clicked = function(event){
+		  
+		  console.log('clicked' , event)
+	  }
+	  addEvListener('click',clicked);
+  </script>
+</body>
+</html>
